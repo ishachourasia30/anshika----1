@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inventory Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">IMS</div>
+
+    <div>
+        <h1>Inventory Management System</h1>
+        <p>Simple C++ based inventory control</p>
+    </div>
+</header>
+
+
+<main>
+
+    <section class="dashboard">
+
+        <div class="card">
+            <h3>Total Products</h3>
+            <p id="totalProducts">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Stock</h3>
+            <p id="totalStock">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Orders</h3>
+            <p id="totalOrders">0</p>
+        </div>
+
+    </section>
+
+
+    <section class="box">
+
+        <h2>Product Inventory</h2>
+
+        <button onclick="loadProducts()">
+            Refresh Products
+        </button>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+
+            <tbody id="productTable">
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+    <section class="actions">
+
+        <div class="box">
+
+            <h2>Search Product</h2>
+
+            <input
+                type="number"
+                id="searchId"
+                placeholder="Enter Product ID">
+
+            <button onclick="searchProduct()">
+                Search
+            </button>
+
+            <div id="searchResult"></div>
+
+        </div>
+
+
+        <div class="box">
+
+            <h2>Update Quantity</h2>
+
+            <input
+                type="number"
+                id="updateId"
+                placeholder="Product ID">
+
+            <input
+                type="number"
+                id="newQuantity"
+                placeholder="New Quantity">
+
+            <button onclick="updateQuantity()">
+                Update
+            </button>
+
+        </div>
+
+
+        <div class="box">
+
+            <h2>Place Order</h2>
+
+            <input
+                type="number"
+                id="orderProductId"
+                placeholder="Product ID">
+
+            <input
+                type="number"
+                id="orderQuantity"
+                placeholder="Quantity">
+
+            <button onclick="placeOrder()">
+                Place Order
+            </button>
+
+            <p id="orderMessage"></p>
+
+        </div>
+
+    </section>
+
+
+    <section class="box">
+
+        <h2>Order Tracking</h2>
+
+        <input
+            type="number"
+            id="orderId"
+            placeholder="Enter Order ID">
+
+        <button onclick="trackOrder()">
+            Track Order
+        </button>
+
+        <div id="orderResult"></div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p>Inventory Management System | C++ Backend</p>
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
